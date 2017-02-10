@@ -142,6 +142,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 */
+
+    /*
+<TextureView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentTop="true"
+android:layout_alignParentStart="true"
+android:id="@+id/textureView"
+    />
+*/
     private TextureView.SurfaceTextureListener mSurfaceTextureListener = new TextureView.SurfaceTextureListener(){
 
         @Override
