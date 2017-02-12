@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Camera2APIPrueba</string>
     <string name="hello_world">Hola</string>
-    <string name="permiso_camara">Has concedir permís a MultaPay per utilitzar la càmera</string>
-    <string name="conceder_permiso">Concedir</string>
+    <string name="permiso_camara">Tienes que conceder permisos a la aplicación para utilizar la camara</string>
+    <string name="conceder_permiso">Conceder</string>
     <string name="denegar_permiso">Denegar</string>
     <string name="titulo_permisos">Permisos</string>
 

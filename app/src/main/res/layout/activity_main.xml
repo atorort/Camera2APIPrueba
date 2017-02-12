@@ -133,7 +133,7 @@
                         android:clickable="true"
                         app:fabSize="mini"
                         app:srcCompat="@android:drawable/ic_menu_camera"
-                        android:id="@+id/floatingActionButton2"
+                        android:id="@+id/btnHacerFoto"
                     />
                 </LinearLayout>
 

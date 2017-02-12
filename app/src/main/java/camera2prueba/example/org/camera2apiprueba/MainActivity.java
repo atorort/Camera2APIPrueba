@@ -20,6 +20,7 @@ import android.util.Size;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Size mPreviewSize;
 
     private TextureView mTextureView;
+    private Button btnHacerFoto;
     private CameraDevice mCameraDevice;
     private CaptureRequest.Builder mPreviewBuilder;
     private CameraCaptureSession mPreviewSession;
@@ -52,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
         mTextureView = (TextureView)findViewById(R.id.texture);
         mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
+        btnHacerFoto = (Button) findViewById(R.id.btnHacerFoto);
+        btnHacerFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hacerFoto();
+            }
+        });
     }
 
     @Override
@@ -81,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
         Log.e(TAG, "openCamera X");
     }
 
+    private void hacerFoto(){
+        
+    }
+
     public void lanzarCamara(View v) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -105,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
         dialogo.show(fragmentManager, (String)getResources().getText(R.string.permiso_camara));
     }
 
+
+    public void solicitarPermisoCamera () {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -125,33 +143,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void solicitarPermisoCamera () {
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
-    }
-
-    /*
-    private void permisosCamara() {
-        permissionCheck = ContextCompat.checkSelfPermission(
-                this, Manifest.permission.CAMERA);
-
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            Log.i("Mensaje", "No se tiene permiso para la camara!.");
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, 225);
-        } else {
-            Log.i("Mensaje", "Tienes permiso para usar la camara.");
-        }
-    }
-*/
-
-    /*
-<TextureView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_alignParentTop="true"
-android:layout_alignParentStart="true"
-android:id="@+id/textureView"
-    />
-*/
     private TextureView.SurfaceTextureListener mSurfaceTextureListener = new TextureView.SurfaceTextureListener(){
 
         @Override
