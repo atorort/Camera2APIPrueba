@@ -5,7 +5,9 @@
     <uses-sdk
         android:minSdkVersion="21"
         android:targetSdkVersion="21" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <span style="color:#ff0000;"> <uses-feature android:name="android.hardware.camera2.full" /></span>
 
     <application
